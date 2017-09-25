@@ -37,6 +37,7 @@ class Student
        grade_nine_array << student
       end
     end
+    binding.pry
     return grade_nine_array
   end
 
