@@ -57,7 +57,7 @@ class Student
       FROM students
       WHERE id < 12
     SQL
-    
+
     new_array = []
 
     DB[:conn].execute(sql).map do |row|
