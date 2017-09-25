@@ -57,12 +57,13 @@ class Student
       FROM students
       WHERE id < 12
     SQL
+    
     new_array = []
 
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
     end
-
+    binding.pry
     new_array
   end
 
