@@ -31,13 +31,13 @@ class Student
   end
 
   def self.count_all_students_in_grade_9
-    9th_grade_counter = 0
+    grade_counter = 0
     self.all.each do |student|
       if student.grade == 9
-       9th_grade_counter += 1
+       grade_counter += 1
       end
     end
-    9th_grade_counter
+    grade_counter
   end
 
   def students_below_12th_grade
