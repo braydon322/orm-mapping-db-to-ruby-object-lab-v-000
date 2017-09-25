@@ -96,6 +96,7 @@ class Student
     student_array.each do |student|
       while i <= 10
         new_array << student
+        i+=1
       end
       binding.pry
     end
