@@ -72,7 +72,7 @@ class Student
       FROM students
       WHERE id <= #{x}
     SQL
-    
+
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
     end
