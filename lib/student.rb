@@ -100,6 +100,18 @@ class Student
   end
 
   def all_students_in_grade_X(x)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = #{x}
+    SQL
+
+    new_array = []
+
+    DB[:conn].execute(sql).map do |row|
+      new_array << self.new_from_db(row)
+    end
+    new_array
   end
 
   def save
