@@ -26,10 +26,8 @@ class Student
     found_student = nil
     self.all.each do |student|
       if student.name == name
-      #  binding.pry
        found_student = student
        return found_student
-       binding.pry
       end
     end
   end
