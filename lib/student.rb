@@ -55,7 +55,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE id < 12
+      WHERE grade < 12
     SQL
 
     new_array = []
@@ -71,7 +71,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE id <= #{x}
+      WHERE grade <= #{x}
     SQL
 
     return DB[:conn].execute(sql)
