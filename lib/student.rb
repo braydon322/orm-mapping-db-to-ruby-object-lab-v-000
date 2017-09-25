@@ -51,7 +51,7 @@ class Student
     new_array
   end
 
-  def students_below_12th_grade
+  def self.students_below_12th_grade
     sql = <<-SQL
       SELECT *
       FROM students
