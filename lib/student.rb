@@ -76,7 +76,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE id <= 10
+      WHERE id
     SQL
 
     hello = DB[:conn].execute(sql)
