@@ -52,6 +52,24 @@ class Student
   end
 
   def students_below_12th_grade
+    sql = <<-SQL
+      SELECT *
+      FROM students
+    SQL
+
+    new_array = []
+
+    DB[:conn].execute(sql).map do |row|
+      new_array << self.new_from_db(row)
+    end
+
+    new_array.each do |student|
+      if student.grade < 11
+        new_array.pop(student.id)
+      end
+    end
+
+    new_array
   end
 
   def self.first_X_students_in_grade_10
