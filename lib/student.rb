@@ -73,6 +73,8 @@ class Student
       WHERE id <= #{x}
     SQL
 
+    new_array = []
+
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
     end
@@ -87,6 +89,8 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
+
+    new_array = []
 
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
