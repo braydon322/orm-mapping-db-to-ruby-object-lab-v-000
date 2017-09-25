@@ -99,7 +99,7 @@ class Student
     new_array.flatten[0]
   end
 
-  def all_students_in_grade_X(x)
+  def self.all_students_in_grade_X(x)
     sql = <<-SQL
       SELECT *
       FROM students
