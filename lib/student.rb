@@ -76,6 +76,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
+      WHERE grade = 10
     SQL
 
     student_array = []
