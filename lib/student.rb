@@ -77,6 +77,7 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
+      WHERE id <= 10
     SQL
 
     hello = DB[:conn].execute(sql)
