@@ -39,10 +39,14 @@ class Student
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
     end
-    
+
     new_array.each do |student|
       if student.grade != 9
         new_array.pop(student)
+      end
+    end
+
+    new_array
   end
 
   def students_below_12th_grade
