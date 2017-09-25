@@ -98,7 +98,6 @@ class Student
         new_array << student
         i+=1
       end
-      binding.pry
     end
     new_array
   end
