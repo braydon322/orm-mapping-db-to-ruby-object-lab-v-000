@@ -84,7 +84,7 @@ class Student
     SQL
     result = DB[:conn].execute(sql)
     binding.pry
-    
+
   end
 
   def all_students_in_grade_X(x)
