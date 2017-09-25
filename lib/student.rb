@@ -28,6 +28,7 @@ class Student
       if student.name == name
       #  binding.pry
        found_student = student
+       binding.pry
       end
     end
   end
