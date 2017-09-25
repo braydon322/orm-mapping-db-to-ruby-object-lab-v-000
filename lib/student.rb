@@ -23,11 +23,9 @@ class Student
   end
 
   def self.find_by_name(name)
-    found_student = nil
     self.all.each do |student|
       if student.name == name
-       found_student = student
-       return found_student
+       return student
       end
     end
   end
