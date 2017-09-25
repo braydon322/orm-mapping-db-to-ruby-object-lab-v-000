@@ -72,10 +72,17 @@ class Student
       FROM students
       WHERE id <= #{x}
     SQL
-  DB[:conn].execute(sql)
+    DB[:conn].execute(sql)
   end
 
   def first_student_in_grade_10
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = 10
+      LIMIT 1
+    SQL
+    DB[:conn].execute(sql)
   end
 
   def all_students_in_grade_X(x)
