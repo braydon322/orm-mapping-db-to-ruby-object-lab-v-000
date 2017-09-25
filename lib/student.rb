@@ -72,13 +72,38 @@ class Student
     new_array
   end
 
-  def self.first_X_students_in_grade_10
+  def self.first_X_students_in_grade_10(x)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+    SQL
+
+    student_array = []
+
+    DB[:conn].execute(sql).map do |row|
+      student_array << self.new_from_db(row)
+    end
+
+    student_array.each do |student|
+      if student.grade != "10"
+        student_array.pop(student.id)
+      end
+    end
+
+    i = 1
+    new_array = []
+    
+    student_array.each do |student|
+      while i <= 10
+        new_array << student
+      end
+    new_array
   end
 
   def first_student_in_grade_10
   end
 
-  def all_students_in_grade_X
+  def all_students_in_grade_X(x)
   end
 
   def save
