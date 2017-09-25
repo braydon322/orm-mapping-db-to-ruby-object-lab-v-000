@@ -76,7 +76,6 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade = 10
       WHERE id <= 10
     SQL
 
