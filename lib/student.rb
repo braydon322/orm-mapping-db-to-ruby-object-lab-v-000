@@ -72,8 +72,7 @@ class Student
       FROM students
       WHERE grade <= #{x}
     SQL
-
-    return DB[:conn].execute(sql)
+  DB[:conn].execute(sql)
   end
 
   def first_student_in_grade_10
