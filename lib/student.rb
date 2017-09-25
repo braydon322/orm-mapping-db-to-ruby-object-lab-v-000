@@ -31,16 +31,18 @@ class Student
   end
 
   def self.count_all_students_in_grade_9
-    grade_nine_array = []
-    self.all.each do |student|
-      binding.pry
-      if student.grade == 9
-       grade_nine_array << student
-       binding.pry
-      end
+    sql = <<-SQL
+      SELECT *
+      FROM students
+    SQL
+
+    DB[:conn].execute(sql).map do |row|
+      new_array << self.new_from_db(row)
     end
-    binding.pry
-    return grade_nine_array
+    
+    new_array.each do |student|
+      if student.grade != 9
+        new_array.pop(student)
   end
 
   def students_below_12th_grade
