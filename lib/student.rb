@@ -70,7 +70,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade <= #{x}
+      WHERE id <= #{x}
     SQL
   DB[:conn].execute(sql)
   end
