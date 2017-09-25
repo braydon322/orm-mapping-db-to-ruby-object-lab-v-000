@@ -82,6 +82,7 @@ class Student
 
     DB[:conn].execute(sql).map do |row|
       student_array << self.new_from_db(row)
+      binding.pry
     end
 
     student_array.each do |student|
