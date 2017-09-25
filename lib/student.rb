@@ -79,7 +79,7 @@ class Student
       WHERE grade = 10
     SQL
     
-    DB[:conn].execute(sql)
+    hello = DB[:conn].execute(sql)
     # student_array = []
 
     # DB[:conn].execute(sql).map do |row|
