@@ -92,11 +92,12 @@ class Student
 
     i = 1
     new_array = []
-    
+
     student_array.each do |student|
       while i <= 10
         new_array << student
       end
+      binding.pry
     new_array
   end
 
