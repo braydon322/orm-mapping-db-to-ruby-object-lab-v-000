@@ -43,7 +43,7 @@ class Student
     end
 
     new_array.each do |student|
-      if student.grade != 9
+      if student.grade != "9"
         new_array.pop(student.id)
       end
     end
@@ -64,7 +64,7 @@ class Student
     end
 
     new_array.each do |student|
-      if student.grade < 11
+      if student.grade == "12"
         new_array.pop(student.id)
       end
     end
