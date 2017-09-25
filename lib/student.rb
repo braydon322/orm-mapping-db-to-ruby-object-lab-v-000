@@ -37,7 +37,7 @@ class Student
        grade_nine_array << student
       end
     end
-    grade_nine_array
+    return grade_nine_array
   end
 
   def students_below_12th_grade
