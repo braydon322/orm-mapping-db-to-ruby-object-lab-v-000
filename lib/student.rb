@@ -55,18 +55,11 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
+      WHERE id < 12
     SQL
-
-    new_array = []
 
     DB[:conn].execute(sql).map do |row|
       new_array << self.new_from_db(row)
-    end
-
-    new_array.each do |student|
-      if student.grade == "12"
-        new_array.pop(student.id)
-      end
     end
 
     new_array
