@@ -72,7 +72,12 @@ class Student
       FROM students
       WHERE id <= #{x}
     SQL
-    DB[:conn].execute(sql)
+    
+    DB[:conn].execute(sql).map do |row|
+      new_array << self.new_from_db(row)
+    end
+
+    new_array
   end
 
   def self.first_student_in_grade_10
@@ -82,9 +87,12 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
-    result = DB[:conn].execute(sql)
-    binding.pry
 
+    DB[:conn].execute(sql).map do |row|
+      new_array << self.new_from_db(row)
+    end
+
+    new_array
   end
 
   def all_students_in_grade_X(x)
