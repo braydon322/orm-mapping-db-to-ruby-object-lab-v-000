@@ -82,7 +82,9 @@ class Student
       WHERE grade = 10
       LIMIT 1
     SQL
-    DB[:conn].execute(sql)
+    result = DB[:conn].execute(sql)
+    binding.pry
+    
   end
 
   def all_students_in_grade_X(x)
