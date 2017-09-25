@@ -35,6 +35,7 @@ class Student
     self.all.each do |student|
       if student.grade == 9
        grade_nine_array << student
+       binding.pry
       end
     end
     binding.pry
