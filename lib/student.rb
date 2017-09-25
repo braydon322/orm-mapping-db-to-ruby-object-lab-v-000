@@ -86,16 +86,16 @@ class Student
     #   student_array << self.new_from_db(row)
     #   binding.pry
     # end
-    # 
+    #
     # student_array.each do |student|
     #   if student.grade != "10"
     #     student_array.pop(student.id)
     #   end
     # end
-    # 
+    #
     # i = 1
     # new_array = []
-    # 
+    #
     # student_array.each do |student|
     #   while i <= 10
     #     new_array << student
