@@ -79,31 +79,7 @@ class Student
       WHERE id <= #{x}
     SQL
 
-    hello = DB[:conn].execute(sql)
-    binding.pry
-    # student_array = []
-
-    # DB[:conn].execute(sql).map do |row|
-    #   student_array << self.new_from_db(row)
-    #   binding.pry
-    # end
-    #
-    # student_array.each do |student|
-    #   if student.grade != "10"
-    #     student_array.pop(student.id)
-    #   end
-    # end
-    #
-    # i = 1
-    # new_array = []
-    #
-    # student_array.each do |student|
-    #   while i <= 10
-    #     new_array << student
-    #     i+=1
-    #   end
-    # end
-    # new_array
+    return DB[:conn].execute(sql)
   end
 
   def first_student_in_grade_10
